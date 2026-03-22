@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tourist Destinations | Explore Devbhoomi</title>
+    <link rel="stylesheet" href="deststyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+ <nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Explore Devbhoomi</div>
+        <ul class="nav-links">
+            <li><a href="/Home/index.html">Home</a></li>
+            <li><a href="/Destinations/destinations.html">Destinations</a></li>
+            <li><a href="/Recommend/recommend.html">Get Recommendations</a></li>
+            <li><a href="/Budget/budget.html">Budget Calculator</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="nav-login-btn" id="navUserBtn">Login</button>
+        </div>
+    </div>
+</nav>
+
+<section class="dest-hero">
+    <div class="hero-overlay">
+        <h1 class="main-title">Tourist Destinations of Uttarakhand</h1>
+        <p class="sub-text">Find your next escape in the Land of Gods</p>
+        
+        <div class="filter-box">
+            <input type="text" id="searchInput" placeholder="Search by name or description...">
+            <div class="tags">
+                <span class="tag active" data-cat="all">All</span>
+                <span class="tag" data-cat="Spiritual">Spiritual</span>
+                <span class="tag" data-cat="Adventure">Adventure</span>
+                <span class="tag" data-cat="Nature">Nature</span>
+                <span class="tag" data-cat="Wildlife">Wildlife</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="grid-section">
+    <div class="dest-grid" id="destGrid">
+        </div>
+</section>
+
+<footer class="footer">
+    <p>Explore Devbhoomi | Team Ghumte Raho</p>
+</footer>
+
+<script src="destscript.js"></script>
+</body>
+</html>

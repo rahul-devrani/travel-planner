@@ -1,0 +1,256 @@
+:root {
+    --gold: #ffb400;
+    --dark: #0f172a;
+    --blue: #0c3c60;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* navbar */
+.navbar {
+    background: #0f172a;
+    padding: 0 5%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: 900;
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* nav hover effect */
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-login-btn {
+    background: var(--gold);
+    color: #0f172a;
+    border: none;
+    padding: 10px 28px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-login-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* Dest Hero */
+.dest-hero {
+    height: 60vh;
+    background: url('/images/destinations.png') center/cover;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.main-title {
+    font-size: 45px;
+    font-weight: 900;
+}
+
+.main-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: var(--gold);
+    margin: 10px auto;
+}
+
+/* Filter & Tags */
+.filter-box {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.tags {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 8px 22px;
+    border: 1px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-weight: 500;
+}
+
+/* active tag*/
+.tag.active {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 180, 0, 0.4);
+}
+
+.tag:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Grid sec */
+.grid-section {
+    padding: 80px 8%;
+    background: url('/images/dest.png') center/cover no-repeat fixed;
+    min-height: 600px;
+}
+
+.dest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card-content h3 {
+    color: var(--blue);
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.rating {
+    color: #f59e0b;
+}
+
+.best-time {
+    color: var(--blue);
+    font-size: 13px;
+}
+
+.footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
