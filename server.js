@@ -14,21 +14,41 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'Public')));
 
 
-// db
+require('dotenv').config();
+
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '12345',
-    database: 'tour'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
 });
+
+// db
+// const db = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '12345',
+//     database: 'tour'
+// });
+
 
 db.connect(err => {
     if (err) {
-        console.error(" MySQL failed", err.message);
+        console.error("MySQL failed:", err);
     } else {
-        console.log("MySQL connected");
+        console.log("MySQL Connected");
     }
 });
+
+
+// db.connect(err => {
+//     if (err) {
+//         console.error(" MySQL failed", err.message);
+//     } else {
+//         console.log("MySQL connected");
+//     }
+// });
 
 
 
