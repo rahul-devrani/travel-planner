@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendation</title>
+    <link rel="stylesheet" href="restyle.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Explore Devbhoomi</div>
+        <ul class="nav-links">
+            <li><a href="/Home/index.html">Home</a></li>
+            <li><a href="/Destinations/destinations.html">Destinations</a></li>
+            <li><a href="/Recommend/recommend.html">Get Recommendations</a></li>
+            <li><a href="/Budget/budget.html">Budget Calculator</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="nav-login-btn" id="navUserBtn">Login</button>
+        </div>
+    </div>
+</nav>
+
+<!-- main  -->
+<div class="container">
+
+    <h1 class="main-heading">Get Recommendations</h1>
+
+    <div class="card form-card">
+
+        <!-- tags  -->
+        <h3>Choose Interests</h3>
+        <div class="grid">
+            <label><input type="checkbox" value="adventure"> Adventure</label>
+            <label><input type="checkbox" value="spiritual"> Spiritual</label>
+            <label><input type="checkbox" value="nature"> Nature</label>
+            <label><input type="checkbox" value="snow"> Snow</label>
+            <label><input type="checkbox" value="trekking"> Trekking</label>
+        </div>
+
+        <!-- region  -->
+        <div class="input-group">
+            <label>Region</label>
+            <select id="region">
+                <option>Garhwal</option>
+                <option>Kumaon</option>
+            </select>
+        </div>
+
+        <!-- terrain  -->
+        <div class="input-group">
+            <label>Terrain</label>
+            <select id="terrain">
+                <option>Snow</option>
+                <option>Lake</option>
+                <option>Meadow</option>
+                <option>River</option>
+                <option>Hill</option>
+            </select>
+        </div>
+
+         <!-- travel type  -->
+        <div class="input-group">
+            <label>Travel Type</label>
+            <select id="persona">
+                <option>Solo</option>
+                <option>Couple</option>
+                <option>Family</option>
+                <option>Friends</option>
+            </select>
+        </div>
+
+        <button class="btn-main" onclick="getRecommendations()">Get Recommendations</button>
+
+    </div>
+
+    <!-- results  -->
+    <div id="results" class="results-grid"></div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>Explore Devbhoomi || Team Ghumte Raho</p>
+</footer>
+
+<script src="rescript.js"></script>
+</body>
+</html>
