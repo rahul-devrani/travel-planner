@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Explore Devbhoomi</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="detstyle.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Devbhoomi | Destination Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="detstyle.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 </head>
-
 <body>
 
-<!-- navbar  -->
- <nav class="navbar">
+<nav class="navbar">
     <div class="nav-container">
         <div class="logo">Explore Devbhoomi</div>
         <ul class="nav-links">
@@ -28,9 +25,8 @@
     </div>
 </nav>
 
-<!-- hero  -->
 <section class="hero">
-    <img id="heroImg">
+    <img id="heroImg" alt="Destination Image">
     <div class="heroOver">
         <div class="heroBox">
             <span id="placeType"></span>
@@ -41,69 +37,61 @@
 </section>
 
 <div class="main">
-
-    <!-- left  -->
     <div class="left">
-
         <div class="card">
-            <h2>Overview</h2>
-            <p id="descp"></p>
+            <h2><span class="icon"></span> Overview</h2>
+            <p id="descp" class="description-text"></p>
         </div>
 
         <div class="card">
-            <h2>Top Attractions</h2>
+            <h2><span class="icon"></span> Top Attractions</h2>
             <div id="poiGrid" class="poiGrid"></div>
         </div>
 
-        <!-- weather and map  -->
         <div class="card flex-row">
-
-            <div>
-                <h3>Weather</h3>
+            <div class="weather-section">
+                <h3><span class="icon"></span> Weather Forecast</h3>
                 <div id="weatherList" class="weather-grid"></div>
             </div>
 
-            <div>
-                <h3>Location</h3>
+            <div class="map-section">
+                <h3><span class="icon"></span> Location Map</h3>
                 <div id="mapBox"></div>
             </div>
-
         </div>
 
-        <!-- reviews  -->
         <div class="card">
-            <h2>Traveler Reviews</h2>
-
-            <div id="reviewList"></div>
-
+            <h2><span class="icon"></span> Traveler Reviews</h2>
+            <div id="reviewList" class="review-container"></div>
             <div class="review-form">
-                <input id="reviewText" placeholder="Write review...">
-                <button onclick="submitReview()">Submit</button>
+                <input id="reviewText" placeholder="Write your travel experience here...">
+                <button onclick="submitReview()">Post Review</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="card info-card">
+            <h3>Trip Insights</h3>
+            <div class="info-item">
+                <span class="label">Best Time</span>
+                <span id="bestTime" class="value"></span>
+            </div>
+            <div class="info-item">
+                <span class="label">Category</span>
+                <span id="placeType2" class="value"></span>
             </div>
         </div>
 
-    </div>
-
-<!-- right  -->
-    <div class="right">
-
-        <div class="card">
-            <h3>Trip Details</h3>
-            <p><b>Best Time:</b> <span id="bestTime"></span></p>
-            <p><b>Category:</b> <span id="placeType2"></span></p>
+        <div class="action-container">
+            <button class="btn-primary" onclick="goBudget()"> Budget Calculator</button>
+            <button class="btn-secondary" onclick="goRecommend()"> Get Recommendation</button>
         </div>
-
-        <div class="card actions">
-            <button onclick="goBudget()"> Budget Calculator</button>
-            <button onclick="goRecommend()"> Get Recommendation</button>
-        </div>
-
     </div>
-
 </div>
 
 <footer class="footer">
-    <p>Explore Devbhoomi || Team Ghumte Raho</p>
+    <p>© 2026 Explore Devbhoomi | Crafted by Team Ghumte Raho</p>
 </footer>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

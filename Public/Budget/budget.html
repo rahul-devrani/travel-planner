@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Budget Planner | Explore Devbhoomi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="budstyle.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Explore Devbhoomi</div>
+        <ul class="nav-links">
+            <li><a href="/Home/index.html">Home</a></li>
+            <li><a href="/Destinations/destinations.html">Destinations</a></li>
+            <li><a href="/Recommend/recommend.html">Get Recommendations</a></li>
+            <li><a href="/Budget/budget.html">Budget Calculator</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="nav-login-btn" id="navUserBtn">Login</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="content-wrapper">
+        <h1 class="main-heading">Smart Budget Planner</h1>
+        <p class="sub-heading">Personalized expense estimation based on your destination and travel style.</p>
+
+        <div class="calculator-grid">
+            <div class="card form-card">
+                <h3 id="calcTitle">Trip Configuration</h3>
+                
+                <div class="input-group" id="destSelectGroup">
+                    <label>Where are you going?</label>
+                    <select id="destinationList">
+                        <option value="">-- Select Destination --</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label>Days</label>
+                        <input type="number" id="days" value="3" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label>People</label>
+                        <input type="number" id="people" value="2" min="1">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Accommodation Preference</label>
+                    <select id="stayCategory">
+                        <option value="budget">Budget (Homestays/Dorms)</option>
+                        <option value="mid" selected>Standard (3-Star Hotels)</option>
+                        <option value="luxury">Luxury (Resorts/Premium Stay)</option>
+                    </select>
+                </div>
+
+                <button class="btn-calculate" onclick="calculateBudget()">Calculate My Budget</button>
+            </div>
+
+            <div class="card result-card" id="resultCard" style="display:none;">
+                <div class="range-display">
+                    <p>Estimated Range</p>
+                    <div class="price-range">
+                        <span id="minTotal">₹0</span> - <span id="maxTotal">₹0</span>
+                    </div>
+                </div>
+                
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <span>Stay & Lodging</span>
+                        <span id="stayRange" class="item-price">₹0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Travel & Transport</span>
+                        <span id="transRange" class="item-price">₹0</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Food & Activities</span>
+                        <span id="foodRange" class="item-price">₹0</span>
+                    </div>
+                </div>
+                
+                <p class="note">*Rates are dynamic in nature and are based on destination popularity</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>Explore Devbhoomi || Team Ghumte Raho</p>
+</footer>
+
+<script src="budscript.js"></script>
+</body>
+</html>

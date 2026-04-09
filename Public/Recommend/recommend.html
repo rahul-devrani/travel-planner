@@ -2,86 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recommendation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Recommendations | Explore Devbhoomi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="restyle.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
+ <nav class="navbar">
     <div class="nav-container">
         <div class="logo">Explore Devbhoomi</div>
         <ul class="nav-links">
-            <li><a href="/Home/index.html">Home</a></li>
-            <li><a href="/Destinations/destinations.html">Destinations</a></li>
-            <li><a href="/Recommend/recommend.html">Get Recommendations</a></li>
-            <li><a href="/Budget/budget.html">Budget Calculator</a></li>
+            <li><a href="../Home/index.html">Home</a></li>
+            <li><a href="../Destinations/destinations.html">Destinations</a></li>
+            <li><a href="../Recommend/recommend.html">Get Recommendations</a></li>
+            <li><a href="../Budget/budget.html">Budget Calculator</a></li>
         </ul>
         <div class="nav-right">
-            <button class="nav-login-btn" id="navUserBtn">Login</button>
+          <button class="nav-login-btn" id="navUserBtn">Login</button>
         </div>
     </div>
 </nav>
 
-<!-- main  -->
 <div class="container">
+    <div class="content-wrapper">
+        <h1 class="main-heading">Find Your Perfect Escape</h1>
+        <p class="sub-heading">Tell us what you love, and we'll suggest the best of Devbhoomi.</p>
 
-    <h1 class="main-heading">Get Recommendations</h1>
+        <div class="form-card">
+            <div class="section">
+                <h3>Choose Your Interests</h3>
+                <div class="interest-tags">
+                    <label class="tag"><input type="checkbox" value="adventure"> <span>Adventure</span></label>
+                    <label class="tag"><input type="checkbox" value="spiritual"> <span>Spiritual</span></label>
+                    <label class="tag"><input type="checkbox" value="nature"> <span>Nature</span></label>
+                    <label class="tag"><input type="checkbox" value="snow"> <span>Snow</span></label>
+                    <label class="tag"><input type="checkbox" value="trekking"> <span>Trekking</span></label>
+                </div>
+            </div>
 
-    <div class="card form-card">
+            <div class="selectors-grid">
+                <div class="input-group">
+                    <label>Region</label>
+                    <select id="region">
+                        <option>Garhwal</option>
+                        <option>Kumaon</option>
+                    </select>
+                </div>
 
-        <!-- tags  -->
-        <h3>Choose Interests</h3>
-        <div class="grid">
-            <label><input type="checkbox" value="adventure"> Adventure</label>
-            <label><input type="checkbox" value="spiritual"> Spiritual</label>
-            <label><input type="checkbox" value="nature"> Nature</label>
-            <label><input type="checkbox" value="snow"> Snow</label>
-            <label><input type="checkbox" value="trekking"> Trekking</label>
+                <div class="input-group">
+                    <label>Landscape</label>
+                    <select id="terrain">
+                        <option>Snow</option>
+                        <option>Lake</option>
+                        <option>Meadow</option>
+                        <option>River</option>
+                        <option>Hill</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Traveling with?</label>
+                    <select id="persona">
+                        <option>Solo</option>
+                        <option>Couple</option>
+                        <option>Family</option>
+                        <option>Friends</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn-main" onclick="getRecommendations()">Get Recommendations</button>
         </div>
 
-        <!-- region  -->
-        <div class="input-group">
-            <label>Region</label>
-            <select id="region">
-                <option>Garhwal</option>
-                <option>Kumaon</option>
-            </select>
+        <div id="results-header" style="display:none;">
+            <h2 class="results-title">Best Matches For You</h2>
         </div>
-
-        <!-- terrain  -->
-        <div class="input-group">
-            <label>Terrain</label>
-            <select id="terrain">
-                <option>Snow</option>
-                <option>Lake</option>
-                <option>Meadow</option>
-                <option>River</option>
-                <option>Hill</option>
-            </select>
-        </div>
-
-         <!-- travel type  -->
-        <div class="input-group">
-            <label>Travel Type</label>
-            <select id="persona">
-                <option>Solo</option>
-                <option>Couple</option>
-                <option>Family</option>
-                <option>Friends</option>
-            </select>
-        </div>
-
-        <button class="btn-main" onclick="getRecommendations()">Get Recommendations</button>
-
+        <div id="results" class="results-grid"></div>
     </div>
-
-    <!-- results  -->
-    <div id="results" class="results-grid"></div>
-
 </div>
 
-<!-- Footer -->
 <footer class="footer">
     <p>Explore Devbhoomi || Team Ghumte Raho</p>
 </footer>

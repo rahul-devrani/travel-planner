@@ -1,5 +1,4 @@
 function getRecommendations() {
-
     let selectedTags = Array.from(document.querySelectorAll("input[type=checkbox]:checked"))
         .map(cb => cb.value.toLowerCase());
 
@@ -7,7 +6,6 @@ function getRecommendations() {
     let terrain = document.getElementById("terrain").value;
     let persona = document.getElementById("persona").value;
 
-    
     let places = [
         {
             name: "Rishikesh",
@@ -54,64 +52,87 @@ function getRecommendations() {
     let results = [];
 
     places.forEach(place => {
-
         let score = 0;
         let reasons = [];
 
-        // tag matchihg
         let tagMatch = place.tags.filter(t => selectedTags.includes(t)).length;
         if (tagMatch > 0) {
-            score += tagMatch * 2;
-            reasons.push(`Matches ${tagMatch} interests`);
+            score += tagMatch * 3;
+            reasons.push(`Matches ${tagMatch} of your interests`);
         }
 
-        // region
         if (place.region === region) {
             score += 2;
-            reasons.push("In your preferred region");
+            reasons.push("Located in your favorite region");
         }
 
-        // terrain
         if (place.terrain === terrain) {
             score += 2;
-            reasons.push("Matches preferred landscape");
+            reasons.push(`Features the ${place.terrain} landscape you love`);
         }
 
-        // type 
         if (place.suitable_for.includes(persona)) {
             score += 2;
-            reasons.push("Suitable for your travel type");
+            reasons.push(`Perfectly suited for ${persona} travel`);
         }
 
-        // rating
-        score += place.rating / 2;
-
+        score += place.rating;
         results.push({ ...place, score, reasons });
     });
 
     results.sort((a, b) => b.score - a.score);
+    let top = results.filter(r => r.score > 5).slice(0, 4);
 
-    let top = results.slice(0, 4);
+    const output = document.getElementById("results");
+    const header = document.getElementById("results-header");
 
-    let output = document.getElementById("results");
+    if (top.length > 0) {
+        header.style.display = "block";
+        output.innerHTML = "";
+        top.forEach(p => {
+            output.innerHTML += `
+                <div class="result-card">
+                    <div class="result-title">${p.name}</div>
+                    <div class="result-score">Compatibility Score: ${p.score.toFixed(1)}</div>
+                    <div class="result-why">Why we recommend this:</div>
+                    <div class="result-reasons">
+                        ${p.reasons.map(r => `• ${r}`).join("<br>")}
+                    </div>
+                </div>
+            `;
+        });
+        // Scroll smoothly to results
+        header.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        header.style.display = "block";
+        header.innerHTML = "<h2 class='results-title'>No exact matches, try changing filters!</h2>";
+        output.innerHTML = "";
+    }
+}
 
-output.innerHTML = "";
+const navBtn = document.getElementById("navUserBtn");
 
-top.forEach(p => {
-    output.innerHTML += `
-        <div class="result-card">
+const user = JSON.parse(localStorage.getItem("user"));
 
-            <div class="result-title">${p.name}</div>
+// if user logged in
+if (user) {
+    navBtn.innerText = user.name || user.email;
 
-            <div class="result-score">Score: ${p.score.toFixed(1)}</div>
+    // click → logout
+    navBtn.addEventListener("click", () => {
+        const confirmLogout = confirm("logout ?");
+        if (confirmLogout) {
+            localStorage.removeItem("user");
+            location.reload();
+        }
+    });
 
-            <div class="result-why">Why?</div>
+} else {
+    // not logged in → go to login
+    navBtn.innerText = "Login";
 
-            <div class="result-reasons">
-                ${p.reasons.map(r => `• ${r}`).join("<br>")}
-            </div>
-
-        </div>
-    `;
-});
+    navBtn.addEventListener("click", () => {
+        localStorage.setItem("redirectAfterLogin", window.location.href);
+        window.location.href = "/Login/login.html";
+    });
 }
