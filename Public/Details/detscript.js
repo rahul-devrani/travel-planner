@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadReviews(id);
 });
 
-
-
 // map
 function initMap(lat, lng, id) {
     map = L.map('mapBox').setView([lat, lng], 12);
@@ -55,12 +53,9 @@ function initMap(lat, lng, id) {
         });
 }
 
-
 // weather
 async function loadWeather(city) {
-
     const API_KEY = "e8fc3153a5818ab99baeba67d3539b47";
-
     const res = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`
     );
@@ -71,9 +66,7 @@ async function loadWeather(city) {
     box.innerHTML = "";
 
     for (let i = 0; i < 6; i++) {
-
         const d = data.list[i * 8];
-
         box.innerHTML += `
         <div class="weather-card">
             <p>${new Date(d.dt_txt).toDateString().slice(0,10)}</p>
@@ -82,7 +75,6 @@ async function loadWeather(city) {
         </div>`;
     }
 }
-
 
 // poi
 async function loadPOI(id) {
@@ -93,32 +85,27 @@ async function loadPOI(id) {
         data.map(p => `<div class="poi-card">${p.name}</div>`).join("");
 }
 
-
 // reviews
 async function loadReviews(id) {
-
     const res = await fetch(`/api/reviews/${id}`);
     const data = await res.json();
 
     const user = JSON.parse(localStorage.getItem("user"));
 
-    document.getElementById("reviewList").innerHTML =
-        data.map(r => `
-        <div class="review-item">
-            <b>${r.username}</b>
-            <p>${r.comment}</p>
-
-            ${user && user.id === r.user_id
-                ? `<button onclick="deleteReview(${r.id}, ${user.id})">Delete</button>`
-                : ""}
-        </div>
-    `).join("");
+document.getElementById("reviewList").innerHTML =
+    data.map(r => `
+    <div class="review-item">
+        <b>${r.username}</b>
+        <p>${r.comment}</p>
+        ${user && user.id === r.user_id
+            ? `<button onclick="deleteReview(${r.id}, ${user.id})"> Delete</button>`
+            : ""}
+    </div>
+`).join("");
 }
-
 
 // submit review
 async function submitReview() {
-
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (!user) {
@@ -150,7 +137,6 @@ async function deleteReview(id, userId) {
     });
     location.reload();
 }
-
 
 // buttons
 function goBudget() {
