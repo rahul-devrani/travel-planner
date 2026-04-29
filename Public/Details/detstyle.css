@@ -23,7 +23,7 @@ body {
     padding-top: 80px;
 }
 
-/* Navbar  */
+/* Navbar */
 .navbar {
     background: var(--dark);
     padding: 0 5%;
@@ -37,7 +37,7 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.nav-container {
+.navcont {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -50,24 +50,24 @@ body {
     font-weight: 900;
 }
 
-.nav-links {
+.navlink {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.nav-links a {
+.navlink a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+.navlink a:hover {
     color: var(--gold);
 }
 
-.nav-login-btn {
+.navlogin {
     background: var(--gold);
     border: none;
     padding: 10px 25px;
@@ -77,7 +77,7 @@ body {
     transition: 0.3s;
 }
 
-.nav-login-btn:hover {
+.navlogin:hover {
     background: #fff;
     transform: translateY(-2px);
 }
@@ -125,7 +125,6 @@ body {
 }
 
 .rating {
-    
     display: flex;
     align-items: center;
     gap: 8px; 
@@ -134,7 +133,6 @@ body {
     margin-top: 10px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8), 0 0 2px #000;
 }
-
 
 #placeType {
     background: var(--gold);
@@ -152,7 +150,6 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 40px auto;
-   background: url('images/hero.png') center/cover no-repeat;
 }
 
 /* Cards */
@@ -177,7 +174,7 @@ body {
 }
 
 /* Description */
-.description-text {
+.destext {
     color: var(--text-muted);
     font-size: 16px;
     line-height: 1.8;
@@ -207,13 +204,13 @@ body {
 }
 
 /* Weather & Map */
-.flex-row {
+.rowflex {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-.weather-grid {
+.weag {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
@@ -237,6 +234,7 @@ body {
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.1)); 
     margin: 5px 0;
 }
+
 #mapBox {
     height: 250px;
     border-radius: 12px;
@@ -252,13 +250,14 @@ body {
     border-left: 4px solid var(--gold);
 }
 
-.review-form {
+.reviews {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+    /* font-size: 18px; */
 }
 
-.review-form input {
+.reviews input {
     flex: 1;
     padding: 12px;
     border-radius: 8px;
@@ -266,7 +265,7 @@ body {
     outline: none;
 }
 
-.review-form button {
+.reviews button {
     background: var(--dark);
     color: #fff;
     border: none;
@@ -275,13 +274,41 @@ body {
     cursor: pointer;
 }
 
+
+.review-item button {
+    background: #fee2e2; 
+    color: #dc2626; 
+    border: 1px solid #fecaca;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+    width: 200px;
+}
+
+.review-item button:hover {
+    background: #dc2626; 
+    color: #ffffff; 
+    
+}
+
+.review-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
 /* Sidebar */
-.info-card h3 {
+.info h3 {
     border-bottom: 2px solid var(--gold);
     padding-bottom: 10px;
 }
 
-.info-item {
+.item {
     display: flex;
     justify-content: space-between;
     margin: 15px 0;
@@ -297,14 +324,14 @@ body {
     color: var(--blue);
 }
 
-.action-container {
+.actions {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.btn-primary,
-.btn-secondary {
+.primbtn,
+.othbtn {
     padding: 15px;
     border-radius: 12px;
     border: none;
@@ -313,18 +340,18 @@ body {
     transition: 0.3s;
 }
 
-.btn-primary {
+.primbtn {
     background: var(--gold);
     color: var(--dark);
 }
 
-.btn-secondary {
+.othbtn {
     background: var(--blue);
     color: #fff;
 }
 
-.btn-primary:hover,
-.btn-secondary:hover {
+.primbtn:hover,
+.othbtn:hover {
     transform: scale(1.03);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -341,8 +368,7 @@ body {
     .main {
         grid-template-columns: 1fr;
     }
-
-    .flex-row {
+    .rowflex {
         grid-template-columns: 1fr;
     }
 }
