@@ -16,7 +16,6 @@ body {
     color: white;
     min-height: 100vh;
     padding-top: 100px;
-    /* BG IMAGE OPTION BELOW */
     background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)),
         url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=1600');
     background-size: cover;
@@ -37,7 +36,7 @@ body {
     z-index: 2000;
 }
 
-.nav-container {
+.navc {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -51,7 +50,7 @@ body {
     flex: 1;
 }
 
-.nav-links {
+.navlink {
     display: flex;
     list-style: none;
     gap: 35px;
@@ -59,7 +58,7 @@ body {
     justify-content: center;
 }
 
-.nav-links a {
+.navlink a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -67,12 +66,11 @@ body {
     transition: 0.3s;
 }
 
-/* nav hover effect */
-.nav-links a:hover {
+.navlink a:hover {
     color: var(--gold);
 }
 
-.nav-links a::after {
+.navlink a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -83,17 +81,17 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover::after {
+.navlink a:hover::after {
     width: 100%;
 }
 
-.nav-right {
+.right {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
-.nav-login-btn {
+.navlogin {
     background: var(--gold);
     color: #0f172a;
     border: none;
@@ -104,19 +102,19 @@ body {
     transition: 0.3s;
 }
 
-.nav-login-btn:hover {
+.navlogin:hover {
     background: white;
     transform: translateY(-3px);
 }
 
 /* Layout */
-.container {
+.box {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
 }
 
-.main-heading {
+.main {
     font-size: 42px;
     font-weight: 900;
     text-align: center;
@@ -124,14 +122,14 @@ body {
     color: var(--gold);
 }
 
-.sub-heading {
+.sub {
     text-align: center;
     margin-bottom: 40px;
     color: #cbd5e1;
 }
 
 /* Form Card */
-.form-card {
+.forms {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -149,7 +147,7 @@ h3 {
 }
 
 /* Tags Styling */
-.interest-tags {
+.int {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -178,13 +176,13 @@ h3 {
 }
 
 /* Grid Layout */
-.selectors-grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.input-group label {
+.inp label {
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
@@ -206,7 +204,7 @@ select option {
     background: var(--dark);
 }
 
-.btn-main {
+.btn {
     width: 100%;
     margin-top: 40px;
     padding: 18px;
@@ -220,7 +218,7 @@ select option {
     transition: 0.3s;
 }
 
-.btn-main:hover {
+.btn:hover {
     transform: translateY(-4px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
