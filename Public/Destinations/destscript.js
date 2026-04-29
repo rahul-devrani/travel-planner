@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navBtn.innerText = user.name || user.email;
 
         navBtn.onclick = () => {
-            if (confirm("Logout karna hai?")) {
+            if (confirm("Logout ?")) {
                 localStorage.removeItem("user");
                 location.reload();
             }
@@ -23,10 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-
-    //  dest data 
+    // dest data 
     let allDestinations = [];
-    const destGrid = document.getElementById('destGrid');
+    const destGrid = document.getElementById('destGrid'); // Matches HTML ID
     const searchInput = document.getElementById('searchInput');
     const tags = document.querySelectorAll('.tag');
 
