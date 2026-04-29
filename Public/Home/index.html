@@ -1,111 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Explore Devbhoomi | Uttarakhand</title>
-   <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Playball&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Playball&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- navbar -->
- <nav class="navbar">
-    <div class="nav-container">
-        <div class="logo">Explore Devbhoomi</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="../Destinations/destinations.html">Destinations</a></li>
-            <li><a href="../Recommend/recommend.html">Get Recommendations</a></li>
-            <li><a href="../Budget/budget.html">Budget Calculator</a></li>
-        </ul>
-        <div class="nav-right">
-          <button class="nav-login-btn" id="navUserBtn">Login</button>
+    <nav class="navbar">
+        <div class="navc">
+            <div class="logo">Explore Devbhoomi</div>
+            <ul class="navl">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="../Destinations/destinations.html">Destinations</a></li>
+                <li><a href="../Recommend/recommend.html">Get Recommendations</a></li>
+                <li><a href="../Budget/budget.html">Budget Calculator</a></li>
+            </ul>
+            <div class="nvrt">
+                <button class="navlogin" id="navusr">Login</button>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- hero  -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="herocon">
             <h1>Explore <span>Uttarakhand</span></h1>
-            <p class="hero-subtext">The Land of Gods and Adventure</p>
-            <div class="hero-btns">
-                <!-- <button class="btn-fill" onclick="location.href='planning.html'">Start Planning</button> -->
-                <button class="btn-outline" onclick="location.href='../Destinations/destinations.html'">Start Your Planning</button>
+            <p class="herosub">The Land of Gods and Adventure</p>
+            <div class="herobtn">
+                <button class="btn" onclick="location.href='../Destinations/destinations.html'">Start Your Planning</button>
             </div>
         </div>
     </section>
 
- <!-- why visit  -->
-    <section class="section visit-section">
-        <h2 class="main-title">Why Visit Uttarakhand?</h2>
-        <div class="grid-3x2">
-            <div class="v-card">
+    <section class="section vis">
+        <h2 class="title">Why Visit Uttarakhand?</h2>
+        <div class="grid">
+            <div class="card">
                 <h3>Spiritual</h3>
                 <p>Sacred Char Dham temples.</p>
             </div>
-            <div class="v-card">
+            <div class="card">
                 <h3>Adventure</h3>
                 <p>Rafting & Skiing thrills.</p>
             </div>
-            <div class="v-card">
+            <div class="card">
                 <h3>Nature</h3>
                 <p>Himalayan peaks & lakes.</p>
             </div>
-            <div class="v-card">
+            <div class="card">
                 <h3>Wildlife</h3>
                 <p>Jim Corbett Safari.</p>
             </div>
-            <div class="v-card">
+            <div class="card">
                 <h3>Culture</h3>
                 <p>Traditional Pahadi life.</p>
             </div>
-            <div class="v-card">
+            <div class="card">
                 <h3>Offbeat</h3>
                 <p>Hidden Himalayan gems.</p>
             </div>
         </div>
     </section>
 
-<!-- top 6 destinations  -->
-    <section class="section dest-bg" id="destinations">
-        <h2 class="main-title">Top Rated Destinations</h2>
-        <p class="sub-title">Top 6 locations :</p>
-        <div class="dest-grid" id="destGrid"></div>
+    <section class="section destbg" id="destin">
+        <h2 class="maintitle">Top Rated Destinations</h2>
+        <p class="subtitle">Top 6 locations :</p>
+        <div class="subgrid" id="destGrid"></div>
     </section>
 
-<!-- our site  -->
-    <section class="section service-section">
-        <h2 class="main-title white-title">Our Specialized Tools</h2>
-        <div class="grid-3x1">
-            <div class="s-card">
+    <section class="section service">
+        <h2 class="whitetitle">Our Specialized Tools</h2>
+        <div class="grid1">
+            <div class="scard">
                 <h3>Smart AI Planner</h3>
                 <p>Custom itineraries based on your budget.</p>
-                <button class="s-btn" >Plan My Trip</button>
+                <button class="sbtn">Plan My Trip</button>
             </div>
-            <div class="s-card">
+            <div class="scard">
                 <h3>Budget Calculator</h3>
                 <p>Real-time travel cost estimates.</p>
-                <button class="s-btn" onclick="location.href='../Budget/budget.html'">Calculate Now</button>
+                <button class="sbtn" onclick="location.href='../Budget/budget.html'">Calculate Now</button>
             </div>
-            <div class="s-card">
+            <div class="scard">
                 <h3>Detailed Info</h3>
                 <p>Guides on stays and routes.</p>
-                <button class="s-btn" >Explore More</button>
+                <button class="sbtn">Explore More</button>
             </div>
         </div>
     </section>
 
-<!-- footer  -->
     <footer class="footer">
         <p> Explore Devbhoomi || Team Ghumte Raho</p>
     </footer>
 
-<!-- JS  -->
     <script src="script.js"></script>
 </body>
-
 </html>
