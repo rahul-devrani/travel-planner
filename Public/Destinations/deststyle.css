@@ -24,7 +24,7 @@
     z-index: 2000;
 }
 
-.nav-container {
+.navc {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -38,7 +38,7 @@
     flex: 1;
 }
 
-.nav-links {
+.navlink {
     display: flex;
     list-style: none;
     gap: 35px;
@@ -46,7 +46,7 @@
     justify-content: center;
 }
 
-.nav-links a {
+.navlink a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
@@ -54,12 +54,11 @@
     transition: 0.3s;
 }
 
-/* nav hover effect */
-.nav-links a:hover {
+.navlink a:hover {
     color: var(--gold);
 }
 
-.nav-links a::after {
+.navlink a::after {
     content: '';
     position: absolute;
     width: 0;
@@ -70,17 +69,17 @@
     transition: 0.3s;
 }
 
-.nav-links a:hover::after {
+.navlink a:hover::after {
     width: 100%;
 }
 
-.nav-right {
+.navrt {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
-.nav-login-btn {
+.navlogin {
     background: var(--gold);
     color: #0f172a;
     border: none;
@@ -91,13 +90,13 @@
     transition: 0.3s;
 }
 
-.nav-login-btn:hover {
+.navlogin:hover {
     background: white;
     transform: translateY(-3px);
 }
 
 /* Dest Hero */
-.dest-hero {
+.herodestiny {
     height: 60vh;
     background: url('/images/destinations.png') center/cover;
     margin-top: 80px;
@@ -106,7 +105,7 @@
     justify-content: center;
 }
 
-.hero-overlay {
+.overlay {
     background: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
@@ -118,12 +117,12 @@
     padding: 20px;
 }
 
-.main-title {
+.maintitle {
     font-size: 45px;
     font-weight: 900;
 }
 
-.main-title::after {
+.maintitle::after {
     content: '';
     display: block;
     width: 100px;
@@ -133,7 +132,7 @@
 }
 
 /* Filter & Tags */
-.filter-box {
+.filter {
     width: 100%;
     max-width: 700px;
     margin-top: 30px;
@@ -167,7 +166,6 @@
     font-weight: 500;
 }
 
-/* active tag*/
 .tag.active {
     background: var(--gold);
     color: var(--dark);
@@ -181,13 +179,13 @@
 }
 
 /* Grid sec */
-.grid-section {
+.grid {
     padding: 80px 8%;
     background: url('/images/dest.png') center/cover no-repeat fixed;
     min-height: 600px;
 }
 
-.dest-grid {
+.destgrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
