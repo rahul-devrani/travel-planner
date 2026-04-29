@@ -10,29 +10,29 @@
 <body>
 
  <nav class="navbar">
-    <div class="nav-container">
+    <div class="navc">
         <div class="logo">Explore Devbhoomi</div>
-        <ul class="nav-links">
+        <ul class="navlink">
             <li><a href="../Home/index.html">Home</a></li>
             <li><a href="../Destinations/destinations.html">Destinations</a></li>
             <li><a href="../Recommend/recommend.html">Get Recommendations</a></li>
             <li><a href="../Budget/budget.html">Budget Calculator</a></li>
         </ul>
-        <div class="nav-right">
-          <button class="nav-login-btn" id="navUserBtn">Login</button>
+        <div class="right">
+          <button class="navlogin" id="navUserBtn">Login</button>
         </div>
     </div>
 </nav>
 
-<div class="container">
-    <div class="content-wrapper">
-        <h1 class="main-heading">Find Your Perfect Escape</h1>
-        <p class="sub-heading">Tell us what you love, and we'll suggest the best of Devbhoomi.</p>
+<div class="box">
+    <div class="wrap">
+        <h1 class="main">Find Your Perfect Escape</h1>
+        <p class="sub">Tell us what you love, and we'll suggest the best of Devbhoomi.</p>
 
-        <div class="form-card">
+        <div class="forms">
             <div class="section">
                 <h3>Choose Your Interests</h3>
-                <div class="interest-tags">
+                <div class="int">
                     <label class="tag"><input type="checkbox" value="adventure"> <span>Adventure</span></label>
                     <label class="tag"><input type="checkbox" value="spiritual"> <span>Spiritual</span></label>
                     <label class="tag"><input type="checkbox" value="nature"> <span>Nature</span></label>
@@ -41,8 +41,8 @@
                 </div>
             </div>
 
-            <div class="selectors-grid">
-                <div class="input-group">
+            <div class="grid">
+                <div class="inp">
                     <label>Region</label>
                     <select id="region">
                         <option>Garhwal</option>
@@ -50,7 +50,7 @@
                     </select>
                 </div>
 
-                <div class="input-group">
+                <div class="inp">
                     <label>Landscape</label>
                     <select id="terrain">
                         <option>Snow</option>
@@ -61,7 +61,7 @@
                     </select>
                 </div>
 
-                <div class="input-group">
+                <div class="inp">
                     <label>Traveling with?</label>
                     <select id="persona">
                         <option>Solo</option>
@@ -72,10 +72,10 @@
                 </div>
             </div>
 
-            <button class="btn-main" onclick="getRecommendations()">Get Recommendations</button>
+            <button class="btn" onclick="getRecommendations()">Get Recommendations</button>
         </div>
 
-        <div id="results-header" style="display:none;">
+        <div id="res" style="display:none;">
             <h2 class="results-title">Best Matches For You</h2>
         </div>
         <div id="results" class="results-grid"></div>
