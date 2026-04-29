@@ -11,16 +11,16 @@
 <body>
 
 <nav class="navbar">
-    <div class="nav-container">
+    <div class="navcont">
         <div class="logo">Explore Devbhoomi</div>
-        <ul class="nav-links">
+        <ul class="navlink">
             <li><a href="/Home/index.html">Home</a></li>
             <li><a href="/Destinations/destinations.html">Destinations</a></li>
             <li><a href="/Recommend/recommend.html">Get Recommendations</a></li>
             <li><a href="/Budget/budget.html">Budget Calculator</a></li>
         </ul>
-        <div class="nav-right">
-          <button class="nav-login-btn" id="navUserBtn">Login</button>
+        <div class="navrt">
+          <button class="navlogin" id="navUserBtn">Login</button>
         </div>
     </div>
 </nav>
@@ -40,7 +40,7 @@
     <div class="left">
         <div class="card">
             <h2><span class="icon"></span> Overview</h2>
-            <p id="descp" class="description-text"></p>
+            <p id="descp" class="destext"></p>
         </div>
 
         <div class="card">
@@ -48,13 +48,13 @@
             <div id="poiGrid" class="poiGrid"></div>
         </div>
 
-        <div class="card flex-row">
+        <div class="card rowflex">
             <div class="weather-section">
                 <h3><span class="icon"></span> Weather Forecast</h3>
-                <div id="weatherList" class="weather-grid"></div>
+                <div id="weatherList" class="weag"></div>
             </div>
 
-            <div class="map-section">
+            <div class="map">
                 <h3><span class="icon"></span> Location Map</h3>
                 <div id="mapBox"></div>
             </div>
@@ -62,8 +62,8 @@
 
         <div class="card">
             <h2><span class="icon"></span> Traveler Reviews</h2>
-            <div id="reviewList" class="review-container"></div>
-            <div class="review-form">
+            <div id="reviewList" class="review"></div>
+            <div class="reviews">
                 <input id="reviewText" placeholder="Write your travel experience here...">
                 <button onclick="submitReview()">Post Review</button>
             </div>
@@ -71,21 +71,21 @@
     </div>
 
     <div class="right">
-        <div class="card info-card">
+        <div class="card info">
             <h3>Trip Insights</h3>
-            <div class="info-item">
+            <div class="item">
                 <span class="label">Best Time</span>
                 <span id="bestTime" class="value"></span>
             </div>
-            <div class="info-item">
+            <div class="item">
                 <span class="label">Category</span>
                 <span id="placeType2" class="value"></span>
             </div>
         </div>
 
-        <div class="action-container">
-            <button class="btn-primary" onclick="goBudget()"> Budget Calculator</button>
-            <button class="btn-secondary" onclick="goRecommend()"> Get Recommendation</button>
+        <div class="actions">
+            <button class="primbtn" onclick="goBudget()"> Budget Calculator</button>
+            <button class="othbtn" onclick="goRecommend()"> Get Recommendation</button>
         </div>
     </div>
 </div>
