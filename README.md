@@ -56,3 +56,4 @@ The application follows a **Client-Server Architecture**:
 -  **OpenWeatherMap API** – Real-time weather data
 -  **Leaflet.js + OpenStreetMap** – Interactive maps and geolocation
 -  REST APIs – Communication between frontend and backend
+_ _ _ 
